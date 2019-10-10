@@ -14,4 +14,5 @@ module "build_vm" {
     username = var.username
   password = var.password
   endpoint = var.endpoint
+  image_id  = module.create_image.image_id
 }

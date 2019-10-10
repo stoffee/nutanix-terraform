@@ -9,3 +9,7 @@ variable "password" {
 variable "endpoint" {
   description = "ip or hostname for Nutanix Cluster"
 }
+
+variable "image_id" {
+  description = "image_id"
+}
