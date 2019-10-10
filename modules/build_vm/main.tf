@@ -22,7 +22,7 @@ provider "nutanix" {
 #}
 
 data "nutanix_image" "ubuntu" {
-  image_id = module.create_image.nutanix_image.linux.id
+  image_id = module.create_image.image_id
 }
 
 data "nutanix_clusters" "clusters" {}
