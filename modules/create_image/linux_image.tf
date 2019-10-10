@@ -17,9 +17,9 @@ data "nutanix_image" "linux" {
     image_id = nutanix_image.linux.id
 }
 
-data "nutanix_image" "linuxname" {
-    image_name = nutanix_image.linux.name
-}
+#data "nutanix_image" "linuxname" {
+#    image_name = nutanix_image.linux.name
+#}
 
 output "linux_image_id" {
   value = nutanix_image.linux.id
