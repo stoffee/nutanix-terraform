@@ -24,7 +24,7 @@ resource "nutanix_image" "ubuntumini" {
 }
 
 
-data "nutanix_image" "linuxid" {
+data "nutanix_image" "ubuntumini" {
     image_id = nutanix_image.ubuntumini.id
 }
 
@@ -38,12 +38,4 @@ output "ubuntumini_id" {
 
 output "ubuntumini_name" {
   value = nutanix_image.ubuntumini.name
-}
-
-output "linux_id" {
-  value = nutanix_image.linuxid.id
-}
-
-output "linux_name" {
-  value = nutanix_image.linuxname.id
 }
