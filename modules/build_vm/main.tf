@@ -38,10 +38,7 @@ resource "nutanix_virtual_machine" "test" {
   num_sockets          = 1
   memory_size_mib      = 4096
   nic_list = [{
-    subnet_reference = {
-      kind = "subnet"
-      uuid = "${data.nutanix_subnet.net-1.id}"
-    }
+      subnet_uuid = "${data.nutanix_subnet.net-1.id}"
   }]
 }
 
