@@ -6,10 +6,24 @@ provider "nutanix" {
   insecure = true
   port     = 9440
 }
+data "terraform_remote_state" "image" {
+  backend = "remote"
 
-data "nutanix_image" "ubuntu" {
-  image_id = "2b4b5942-2c0e-45eb-b17e-a10b8479c824"
+  config = {
+    organization = "cdunlap"
+    workspaces = {
+      name = "nutanix-terraform"
+    }
+  }
 }
+
+resource "nutanix_image" "linux" {
+    image_id = data.nutanix_image.linux.id
+}
+
+#data "nutanix_image" "ubuntu" {
+#  image_id = "2b4b5942-2c0e-45eb-b17e-a10b8479c824"
+#}
 
 data "nutanix_clusters" "clusters" {}
 
