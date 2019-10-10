@@ -17,25 +17,25 @@ provider "nutanix" {
   port     = 9440
 }
 
-resource "nutanix_image" "ubuntumini" {
-  name        = "Ubuntu"
-  description = "UbuntuMini"
-  source_uri  = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"
+resource "nutanix_image" "linux" {
+  name        = var.image_name
+  description = var.image_description
+  source_uri  = var.image_url
 }
 
 
-data "nutanix_image" "ubuntumini" {
-    image_id = nutanix_image.ubuntumini.id
+data "nutanix_image" "linux" {
+    image_id = nutanix_image.linux.id
 }
 
 data "nutanix_image" "linuxname" {
-    image_name = nutanix_image.ubuntumini.name
+    image_name = nutanix_image.linux.name
 }
 
-output "ubuntumini_id" {
-  value = nutanix_image.ubuntumini.id
+output "linux_image_id" {
+  value = nutanix_image.linux.id
 }
 
-output "ubuntumini_name" {
-  value = nutanix_image.ubuntumini.name
+output "linux_image_name" {
+  value = nutanix_image.linux.name
 }
