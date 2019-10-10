@@ -4,6 +4,8 @@ module "create_image" {
    source = "github.com/stoffee/nutanix-terraform//modules/create_image"
     username = var.username
   password = var.password
-  endpoint = var.endpoin
-
+  endpoint = var.endpoint
+name        = var.image_name
+  description = var.image_description
+  source_uri  = var.image_source_url
 }
