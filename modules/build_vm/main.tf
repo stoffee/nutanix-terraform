@@ -27,7 +27,7 @@ data "nutanix_image" "ubuntu" {
 
 data "nutanix_clusters" "clusters" {}
 data "nutanix_subnet" "net-1" {
-#  subnet_id = "06e1e545-6b80-4a69-823d-6d080204af28"
+  subnet_id = "06e1e545-6b80-4a69-823d-6d080204af28"
 }
 
 resource "nutanix_virtual_machine" "linux" {
