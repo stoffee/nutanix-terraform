@@ -4,7 +4,7 @@ terraform {
     organization = "cdunlap"
 
     workspaces {
-      name = "nutanix-terraform-image"
+      name = "nutanix-terraform"
     }
   }
 }
