@@ -10,12 +10,14 @@ variable "endpoint" {
   description = "ip or hostname for Nutanix Cluster"
 }
 
-variable "image_name" {
-  description = "name os OS image in Nutanix"
+variable "image_description" {
+  description = "description of OS image in Nutanix"
+  default = "Ubuntu Mini Latest"
 }
 
-variable "image_id" {
-  description = "Name OS image in Nutanix"
+variable "image_name" {
+  description = "name os OS image in Nutanix"
+  default = "UbuntuMini-Latest"
 }
 
 variable "image_source_url" {
