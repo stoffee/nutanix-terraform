@@ -15,4 +15,5 @@ module "build_vm" {
   password = var.password
   endpoint = var.endpoint
   image_id = module.create_image.linux_image_id
+  depends_on = [module.create_image.linux_image_id]
 }
