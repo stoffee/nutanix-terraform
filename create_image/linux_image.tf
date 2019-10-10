@@ -1,3 +1,14 @@
+terraform {
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "cdunlap"
+
+    workspaces {
+      name = "nutanix-terraform-image"
+    }
+  }
+}
+
 provider "nutanix" {
   username = var.username
   password = var.password
@@ -13,11 +24,11 @@ resource "nutanix_image" "ubuntumini" {
 }
 
 
-data "nutanix_image" "ubuntumini" {
+data "nutanix_image" "linuxid" {
     image_id = nutanix_image.ubuntumini.id
 }
 
-data "nutanix_image" "ubuntumini" {
+data "nutanix_image" "linuxname" {
     image_name = nutanix_image.ubuntumini.name
 }
 
