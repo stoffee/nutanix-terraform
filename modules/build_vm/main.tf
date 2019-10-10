@@ -45,13 +45,11 @@ resource "nutanix_virtual_machine" "linux" {
   num_vcpus_per_socket = 2
   num_sockets          = 1
   memory_size_mib      = 4096
-#  nic_list = [{
-#    # subnet_reference is saying, which VLAN/network do you want to attach here?
-#    subnet_reference = {
-#      kind = "subnet"
-#      uuid = "06e1e545-6b80-4a69-823d-6d080204af28"
-#    }
-#}
+  nic_list = {
+    nic_type = "NORMAL_NIC"
+    subnet_uuid = "${data.nutanix_subnet.net-1.id}"
+    subnet_name = "net-1"
+  }
 }
 
 
