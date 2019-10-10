@@ -20,7 +20,7 @@ provider "nutanix" {
 resource "nutanix_image" "linux" {
   name        = var.image_name
   description = var.image_description
-  source_uri  = var.image_url
+  source_uri  = var.image_source_url
 }
 
 
