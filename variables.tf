@@ -12,15 +12,15 @@ variable "endpoint" {
 
 variable "image_description" {
   description = "description of OS image in Nutanix"
-  default = "Ubuntu Mini Latest"
+  default     = "Ubuntu Mini Latest"
 }
 
 variable "image_name" {
   description = "name os OS image in Nutanix"
-  default = "UbuntuMini-Latest"
+  default     = "UbuntuMini-Latest"
 }
 
 variable "image_source_url" {
   description = "URL to ISO image"
-  default  = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"
+  default     = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"
 }
