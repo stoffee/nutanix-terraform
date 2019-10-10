@@ -37,6 +37,10 @@ resource "nutanix_virtual_machine" "linux" {
   name                 = random_pet.petservername.id
   cluster_uuid         = data.nutanix_clusters.clusters.entities.0.metadata.uuid
   description          = "terraforming yo ahv"
+  categories {
+    name   = "Owner"
+    value  = "stoffee"
+    }
 #  subnet_uuid = "${data.nutanix_subnet.net-1.id}"
   num_vcpus_per_socket = 2
   num_sockets          = 1
