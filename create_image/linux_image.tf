@@ -32,10 +32,18 @@ data "nutanix_image" "linuxname" {
     image_name = nutanix_image.ubuntumini.name
 }
 
-output "image_id" {
+output "ubuntumini_id" {
   value = nutanix_image.ubuntumini.id
 }
 
-output "image_name" {
-  value = nutanix_image.ubuntumini.id
+output "ubuntumini_name" {
+  value = nutanix_image.ubuntumini.name
+}
+
+output "linux_id" {
+  value = nutanix_image.linuxid.id
+}
+
+output "linux_name" {
+  value = nutanix_image.linuxname.id
 }
