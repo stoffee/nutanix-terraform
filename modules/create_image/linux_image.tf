@@ -1,5 +1,3 @@
-
-
 provider "nutanix" {
   username = var.username
   password = var.password
