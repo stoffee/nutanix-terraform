@@ -26,6 +26,9 @@ data "nutanix_image" "ubuntu" {
 }
 
 data "nutanix_clusters" "clusters" {}
+data "nutanix_subnet" "net-1" {
+#  subnet_id = "06e1e545-6b80-4a69-823d-6d080204af28"
+}
 
 resource "nutanix_virtual_machine" "test" {
   name                 = "cd-ubuntuserver"
@@ -34,6 +37,12 @@ resource "nutanix_virtual_machine" "test" {
   num_vcpus_per_socket = 2
   num_sockets          = 1
   memory_size_mib      = 4096
+  nic_list = [{
+    subnet_reference = {
+      kind = "subnet"
+      uuid = "${data.nutanix_subnet.net-1.id}"
+    }
+  }]
 }
 
 
