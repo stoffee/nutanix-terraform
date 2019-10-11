@@ -9,13 +9,13 @@ data "nutanix_subnet" "vm_set_subnet" {
 }
 
 resource "nutanix_virtual_machine" "linux_vm_set" {
-  count        = "5"
+  count        = "2"
   name         = "server-${count.index + 1}"
   cluster_uuid = data.nutanix_clusters.vm_set_cluster.entities.0.metadata.uuid
   description  = "terraforming yo ahv"
-  num_vcpus_per_socket = 2
+  num_vcpus_per_socket = 1
   num_sockets          = 1
-  memory_size_mib      = 4096
+  memory_size_mib      = 1024
   nic_list {
     subnet_uuid = data.nutanix_subnet.net-1.id
   }
