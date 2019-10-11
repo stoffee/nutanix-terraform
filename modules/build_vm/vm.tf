@@ -1,26 +1,3 @@
-
-provider "nutanix" {
-  username = var.username
-  password = var.password
-  endpoint = var.endpoint
-  insecure = true
-  port     = 9440
-}
-#data "terraform_remote_state" "image" {
-#  backend = "remote"
-#
-#  config = {
-#    organization = "cdunlap"
-#    workspaces = {
-#      name = "nutanix-terraform"
-#    }
-#  }
-#}
-
-#resource "nutanix_image" "linux" {
-#    image_id = data.nutanix_image.linux.id
-#}
-
 resource "random_pet" "petservername" {
 }
 
@@ -41,7 +18,6 @@ resource "nutanix_virtual_machine" "linux" {
     name   = "Owner"
     value  = "stoffee"
     }
-#  subnet_uuid = "${data.nutanix_subnet.net-1.id}"
   num_vcpus_per_socket = 2
   num_sockets          = 1
   memory_size_mib      = 4096
