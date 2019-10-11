@@ -10,6 +10,10 @@ variable "endpoint" {
   description = "ip or hostname for Nutanix Cluster"
 }
 
+variable "subnet_id" {
+  description = "subnet_id"
+}
+
 variable "image_description" {
   description = "description of OS image in Nutanix"
   default     = "Ubuntu Mini Latest"
