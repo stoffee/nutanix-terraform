@@ -1,15 +1,15 @@
 provider "nutanix" {
-  username = ${var.username}
-  password = ${var.password}
-  endpoint = ${var.endpoint}
+  username = "${var.username}"
+  password = "${var.password}"
+  endpoint = "${var.endpoint}"
   insecure = true
   port     = 9440
 }
 
 resource "nutanix_image" "linux" {
-  name        = ${var.image_name}
-  description = ${var.image_description}
-  source_uri  = ${var.image_source_url}
+  name        = "${var.image_name}"
+  description = "${var.image_description}"
+  source_uri  = "${var.image_source_url}"
 }
 
 
