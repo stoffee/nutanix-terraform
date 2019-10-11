@@ -11,7 +11,7 @@ data "nutanix_subnet" "winnet-1" {
 }
 
 resource "nutanix_virtual_machine" "win_vm" {
-  name         = random_pet.win_petservername.id
+  name         = "win-${random_pet.win_petservername.id}"
   cluster_uuid = data.nutanix_clusters.winclusters.entities.0.metadata.uuid
   description  = "terraforming yo ahv"
   num_vcpus_per_socket = 1

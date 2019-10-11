@@ -11,7 +11,7 @@ data "nutanix_subnet" "net-1" {
 }
 
 resource "nutanix_virtual_machine" "vm" {
-  name         = random_pet.petservername.id
+  name         = "lin-${random_pet.petservername.id}"
   cluster_uuid = data.nutanix_clusters.clusters.entities.0.metadata.uuid
   description  = "terraforming yo ahv"
   num_vcpus_per_socket = 1
