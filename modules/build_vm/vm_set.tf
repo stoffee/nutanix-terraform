@@ -2,12 +2,13 @@ data "nutanix_image" "linux_vm_set" {
   image_id = var.image_id
 }
 
-data "nutanix_clusters" "clusters" {}
+data "nutanix_clusters" "cluster" {}
+
 data "nutanix_subnet" "net-1" {
   subnet_id = "06e1e545-6b80-4a69-823d-6d080204af28"
 }
 
-resource "nutanix_virtual_machine" "linux" {
+resource "nutanix_virtual_machine" "linux_vm_set" {
   count = "5"
   name                 = "server-${count.index + 1}"
   cluster_uuid         = data.nutanix_clusters.clusters.entities.0.metadata.uuid
