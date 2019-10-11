@@ -1,8 +1,8 @@
 
 provider "nutanix" {
-  username = "${var.username}"
-  password = "${var.password}"
-  endpoint = "${var.endpoint}"
+  username = var.username
+  password = var.password
+  endpoint = var.endpoint
   insecure = true
   port     = 9440
 }
@@ -25,7 +25,7 @@ resource "random_pet" "petservername" {
 }
 
 data "nutanix_image" "ubuntu" {
-  image_id = "${var.image_id}"
+  image_id = var.image_id
 }
 
 data "nutanix_clusters" "clusters" {}
@@ -46,7 +46,7 @@ resource "nutanix_virtual_machine" "linux" {
   num_sockets          = 1
   memory_size_mib      = 4096
   nic_list {
-    subnet_uuid = "${data.nutanix_subnet.net-1.id}"
+    subnet_uuid = data.nutanix_subnet.net-1.id
   }
 }
 
