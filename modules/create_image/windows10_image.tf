@@ -5,7 +5,7 @@ resource "nutanix_image" "windows" {
 }
 
 data "nutanix_image" "windows" {
-    image_id = nutanix_image.windows.id
+  image_id = nutanix_image.windows.id
 }
 
 output "windows_image_id" {

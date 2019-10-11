@@ -5,7 +5,7 @@ resource "nutanix_image" "linux" {
 }
 
 data "nutanix_image" "linux" {
-    image_id = nutanix_image.linux.id
+  image_id = nutanix_image.linux.id
 }
 
 output "linux_image_id" {

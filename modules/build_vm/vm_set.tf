@@ -9,14 +9,14 @@ data "nutanix_subnet" "vm_set_subnet" {
 }
 
 resource "nutanix_virtual_machine" "linux_vm_set" {
-  count = "5"
-  name                 = "server-${count.index + 1}"
-  cluster_uuid         = data.nutanix_clusters.clusters.entities.0.metadata.uuid
-  description          = "terraforming yo ahv"
+  count        = "5"
+  name         = "server-${count.index + 1}"
+  cluster_uuid = data.nutanix_clusters.clusters.entities.0.metadata.uuid
+  description  = "terraforming yo ahv"
   categories {
-    name   = "Owner"
-    value  = "stoffee"
-    }
+    name  = "Owner"
+    value = "stoffee"
+  }
   num_vcpus_per_socket = 2
   num_sockets          = 1
   memory_size_mib      = 4096
