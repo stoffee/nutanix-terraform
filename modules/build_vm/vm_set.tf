@@ -1,4 +1,4 @@
-data "nutanix_image" "ubuntu" {
+data "nutanix_image" "linux_vm_set" {
   image_id = var.image_id
 }
 
