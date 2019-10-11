@@ -15,6 +15,6 @@ module "build_vm" {
   password  = var.password
   endpoint  = var.endpoint
   subnet_id = var.subnet_id
-  image_id  = module.create_image.linux_image_id
+  linux_image_id  = module.create_image.linux_image_id
   win_image_id = module.create_image.windows_image_id
 }
