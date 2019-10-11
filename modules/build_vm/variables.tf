@@ -10,7 +10,11 @@ variable "endpoint" {
   description = "ip or hostname for Nutanix Cluster"
 }
 
-variable "image_id" {
+variable "linux_image_id" {
+  description = "image_id"
+}
+
+variable "win_image_id" {
   description = "image_id"
 }
 

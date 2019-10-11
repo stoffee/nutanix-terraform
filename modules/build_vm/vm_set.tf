@@ -1,8 +1,8 @@
 data "nutanix_image" "linux_vm_set" {
-  image_id = var.image_id
+  linux_image_id = var.linux_image_id
 }
 
-data "nutanix_clusters" "cluster" {}
+data "nutanix_clusters" "vm_set_cluster" {}
 
 data "nutanix_subnet" "vm_set_subnet" {
   subnet_id = var.subnet_id
@@ -11,7 +11,7 @@ data "nutanix_subnet" "vm_set_subnet" {
 resource "nutanix_virtual_machine" "linux_vm_set" {
   count        = "5"
   name         = "server-${count.index + 1}"
-  cluster_uuid = data.nutanix_clusters.clusters.entities.0.metadata.uuid
+  cluster_uuid = data.nutanix_clusters.vm_set_clusters.entities.0.metadata.uuid
   description  = "terraforming yo ahv"
   num_vcpus_per_socket = 2
   num_sockets          = 1
