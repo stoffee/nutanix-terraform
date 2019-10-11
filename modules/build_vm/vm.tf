@@ -2,7 +2,7 @@ resource "random_pet" "petservername" {
 }
 
 data "nutanix_image" "linux_vm" {
-  linux_image_id = var.linux_image_id
+  image_id = var.linux_image_id
 }
 
 data "nutanix_clusters" "clusters" {}

@@ -1,5 +1,5 @@
 data "nutanix_image" "linux_vm_set" {
-  linux_image_id = var.linux_image_id
+  image_id = var.linux_image_id
 }
 
 data "nutanix_clusters" "vm_set_cluster" {}
