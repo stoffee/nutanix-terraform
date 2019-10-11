@@ -13,3 +13,7 @@ variable "endpoint" {
 variable "image_id" {
   description = "image_id"
 }
+
+variable "subnet_id" {
+  description = "subnet_id"
+}

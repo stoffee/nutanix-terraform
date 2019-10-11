@@ -5,7 +5,7 @@ data "nutanix_image" "linux_vm_set" {
 data "nutanix_clusters" "cluster" {}
 
 data "nutanix_subnet" "vm_set_subnet" {
-  subnet_id = "06e1e545-6b80-4a69-823d-6d080204af28"
+  subnet_id = var.subnet_id
 }
 
 resource "nutanix_virtual_machine" "linux_vm_set" {
