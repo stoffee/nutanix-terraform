@@ -1,6 +1,3 @@
-resource "random_pet" "petservername" {
-}
-
 data "nutanix_image" "ubuntu" {
   image_id = var.image_id
 }
@@ -11,7 +8,8 @@ data "nutanix_subnet" "net-1" {
 }
 
 resource "nutanix_virtual_machine" "linux" {
-  name                 = random_pet.petservername.id
+  count = "5"
+  name                 = "server-${count.index + 1}"
   cluster_uuid         = data.nutanix_clusters.clusters.entities.0.metadata.uuid
   description          = "terraforming yo ahv"
   categories {
