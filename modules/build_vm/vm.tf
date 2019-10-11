@@ -1,7 +1,7 @@
 resource "random_pet" "petservername" {
 }
 
-data "nutanix_image" "ubuntu" {
+data "nutanix_image" "linux_vm" {
   image_id = var.image_id
 }
 
@@ -10,7 +10,7 @@ data "nutanix_subnet" "net-1" {
   subnet_id = "06e1e545-6b80-4a69-823d-6d080204af28"
 }
 
-resource "nutanix_virtual_machine" "linux" {
+resource "nutanix_virtual_machine" "vm" {
   name                 = random_pet.petservername.id
   cluster_uuid         = data.nutanix_clusters.clusters.entities.0.metadata.uuid
   description          = "terraforming yo ahv"
