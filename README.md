@@ -11,4 +11,4 @@ This repo will deploy a linux image to the image store and then deploy a VM from
     - sed -i .bak 's/YOURNutanixPassword/**RealPassword**/g' terraform.tfvars
     - sed -i .bak 's/IPorDNSofYOURNutanixcluster/**nutanix.company.org**/g' terraform.tfvars
  3. terraform plan -var-file=terraform.tfvars
- 3. terraform apply -var-file=terraform.tfvars -auto-approve
+ 4. terraform apply -var-file=terraform.tfvars -auto-approve
