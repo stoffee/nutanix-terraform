@@ -5,7 +5,7 @@ This repo will deploy a linux image to the image store and then deploy a VM from
 
  # Instructions
  1. Clone the repo
-    - git clone https://github.com/stoffee/nutanix-terraform.git && cd nutanix-terraform
+    - git clone <https://github.com/stoffee/nutanix-terraform.git> && cd nutanix-terraform
  2. Move the terraform.tfvars.example to terraform.tvfars and change the tfvars to the appropriate info.
     - sed 's/YOURNutanixUserName/**admin**/g' terraform.tfvars.example > terraform.tfvars
     - sed -i .bak 's/YOURNutanixPassword/**RealPassword**/g' terraform.tfvars
