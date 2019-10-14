@@ -2,7 +2,7 @@ resource "random_pet" "win_petservername" {
 }
 
 data "nutanix_image" "windows_vm" {
-  image_id = var.win_image_id
+  image_id = var.windows_image_id
 }
 
 data "nutanix_clusters" "winclusters" {}

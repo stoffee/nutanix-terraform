@@ -19,7 +19,12 @@ variable "image_description" {
   default     = "Ubuntu Mini Latest"
 }
 
-variable "image_name" {
+variable "linux_image_name" {
+  description = "name os OS image in Nutanix"
+  default     = "UbuntuMini-Latest"
+}
+
+variable "windows_image_name" {
   description = "name os OS image in Nutanix"
   default     = "UbuntuMini-Latest"
 }
